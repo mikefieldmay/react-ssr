@@ -1,9 +1,14 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import { Home } from './components/Home';
+import { HomePage } from './pages/HomePage';
+import { UsersListPage } from './pages/UsersListPage';
 
-export const Routes = () => (
-    <div>
-        <Route exact path="/" component={Home} />
-    </div>
-)
+export const Routes = [
+    {
+        path: '/',
+        exact: true,
+        ...HomePage
+    },
+    {
+        path: '/users',
+        ...UsersListPage
+    }
+];
